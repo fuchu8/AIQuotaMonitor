@@ -1,5 +1,7 @@
 # AI Quota Monitor
 
+**中文** · [English](README.en.md)
+
 macOS 菜单栏工具，监控 **OpenAI Codex**、**Cursor**、**OpenCode Go** 与 **Grok Bot** 的额度。原生 Swift / SwiftUI / AppKit，无第三方依赖，常驻菜单栏，不占 Dock。
 
 包 ID：`com.skye.aiquotamonitor` · 当前版本 **1.4.6** · 需要 macOS 14+。
