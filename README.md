@@ -4,6 +4,38 @@ macOS 菜单栏工具，监控 **OpenAI Codex**、**Cursor**、**OpenCode Go** �
 
 包 ID：`com.skye.aiquotamonitor` · 当前版本 **1.4.6** · 需要 macOS 14+。
 
+仓库里只有程序本身。没有作者的 API Key、访问令牌、账号或私人接口地址。每个人用自己电脑上已经登录的 Codex、Cursor、OpenCode Go 或 Grok Bot。
+
+---
+
+## 下载后怎么用
+
+需要 macOS 14 或更高，并安装 Xcode 或 Command Line Tools（里面带 `swift`）。
+
+```bash
+git clone https://github.com/fuchu8/AIQuotaMonitor.git
+cd AIQuotaMonitor
+./build.sh
+cp -R -P -p -X "dist/AI Quota Monitor.app" /Applications/
+open "/Applications/AI Quota Monitor.app"
+```
+
+应用不进 Dock。打开后看屏幕顶部菜单栏右侧的圆形猫图标。悬停可以看到额度摘要，点击打开详情。详情右上角是刷新和设置，底部菜单可以退出。
+
+各平台都用你自己的登录，不需要把密钥写进这个项目：
+
+| 想看的额度 | 你需要先做好的事 |
+|---|---|
+| Codex | 本机已安装并登录 `codex`。程序会调用它的 `app-server` 只读账户接口。 |
+| Cursor | Cursor 桌面版保持登录。程序读取本机钥匙串里已有的登录态。 |
+| Grok Bot | 同上，使用 Cursor / Grok Bot 已有的登录态。周池和 Grok、Cursor 共用，不是另一份额度。 |
+| OpenCode Go 百分比 | OpenCode 已登录，或本机环境变量 `OPENCODE_GO_API_KEY` / `OPENCODE_API_KEY` 里有你自己的 `oc_` 密钥。密钥留在本机，不要提交到 Git。 |
+| OpenCode Go 的 Token 列 | 只统计本机 `~/.workbuddy/logs` 里能匹配到的用量。换一台电脑、日志不全时，这三列会不完整。百分比仍以官方接口为准。 |
+
+Cursor 读不到官方百分比时，可以在详情或设置里导入 [Cursor Dashboard](https://cursor.com/dashboard?tab=usage) 导出的 CSV，或手动填一个已用百分比。这是备用，不是必须。
+
+设置里可以改刷新间隔（1 / 5 / 15 / 30 分钟）、低额度提醒、登录后自动启动，以及显示或隐藏桌面小窗。桌面小窗从顶部或底部标着「拖动」的区域按住移动，它不是系统「添加小组件」里的 Widget。
+
 ---
 
 ## 一、数据来源
