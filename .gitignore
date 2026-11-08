@@ -1,0 +1,11 @@
+.build/
+dist/
+_backups/
+DerivedData/
+*.dSYM
+*.log
+.DS_Store
+xcuserdata/
+
+# 本机会话记录，含本机路径，不进仓库
+审查修复记录*.md
