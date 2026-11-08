@@ -1,6 +1,6 @@
 # AI Quota Monitor
 
-[中文](README.md) · **English**
+[中文](https://github.com/fuchu8/AIQuotaMonitor) · **English**
 
 A macOS menu-bar app that shows quotas for **OpenAI Codex**, **Cursor**, **OpenCode Go**, and **Grok Bot**. Native Swift / SwiftUI / AppKit, no third-party dependencies. It stays in the menu bar and does not take a Dock icon.
 
